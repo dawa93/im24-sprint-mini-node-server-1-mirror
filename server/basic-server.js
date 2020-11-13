@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
         });
     } else if (url === "/lower") {
       req
-        .on("data", (chunk) => data.push(data))
+        .on("data", (chunk) => data.push(chunk))
         .on("end", () => {
           data = Buffer.concat(data).toString();
           res.end(data.toLowerCase());
